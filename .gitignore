@@ -1,0 +1,23 @@
+# Visual Studio Code
+.vscode/
+
+# Python
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Systems
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Nix
+result
+result-*
+.direnv/
+.nix-profile/
