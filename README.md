@@ -23,3 +23,5 @@ The ASCII art used in this program was originally created by Simon Jansen. I wou
 ## License
 
 This program is licensed under the MIT License.
+
+For more see [LICENSE](LICENSE)
