@@ -34,8 +34,8 @@ python main.py
 The second script is [`update.py` or the updater](update.py). The updater downloads the latest ASCII Star Wars animation from **asciimation.co.nz** to `starwars.txt`, preserving the last file as an archive. To run the script you have both previous options:
 
 > [!WARNING]
-> If this script is used with pure python, please ensure the `requests` package
-> or it would fail to run! If used as a nix flake this package is being installed automatically.
+> When running with Python directly, make sure the requests package is installed. 
+> Nix users do not need to install it manually.
 
 ```bash
 # Nix
