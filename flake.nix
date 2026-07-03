@@ -31,19 +31,19 @@
       in
       {
         packages = {
-          default = mkScript "main" "main.py";
-          update = mkScript "update" "update.py";
+          default = mkScript "starwars" "main.py";
+          update = mkScript "starwars-update" "update.py";
         };
 
         apps = {
           default = {
             type = "app";
-            program = "${self.packages.${system}.default}/bin/main";
+            program = "${self.packages.${system}.default}/bin/starwars";
           };
 
           update = {
             type = "app";
-            program = "${self.packages.${system}.update}/bin/update";
+            program = "${self.packages.${system}.update}/bin/starwars-update";
           };
         };
       }
