@@ -51,4 +51,10 @@ async def main() -> None:
         print("\033[?1049l\033[?25h", end="")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        pass
+    finally:
+        # Leave the buffer, make cursor visible again
+        print("\033[?1049l\033[?25h", end="")
