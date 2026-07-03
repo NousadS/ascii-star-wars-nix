@@ -1,19 +1,22 @@
+#!/usr/bin/env python3
+
 """
-Playing ASCII Art (Star Wars) from https://www.asciimation.co.nz/
+Player for ASCII Art (Star Wars) from https://www.asciimation.co.nz/
 """
 
+import os
+import sys
 import asyncio
 from pathlib import Path
-import sys
-
-STARWARS_FILE: Path = Path(os.environ.get("STARWARS_FILE", Path.cwd() / "starwars.txt"))
 
 
-async def main() -> None:
+async def async_main() -> None:
+    STARWARS_FILE: Path = Path(os.environ.get("STARWARS_FILE", Path.cwd() / "starwars.txt"))
+
     lines_per_frame: int = 14  # includes delay line + frame lines
 
     if not STARWARS_FILE.exists():
-        raise FileNotFoundError(f"[!] File {STARWARS_FILE.name} does not exist. ({STARWARS_FILE.resolve()})")
+        raise FileNotFoundError(f"[!] File {STARWARS_FILE.resolve()} does not exist.")
 
     print("[*] Loading animation file...")
 
@@ -50,11 +53,14 @@ async def main() -> None:
         # Leave the buffer, make cursor visible again
         print("\033[?1049l\033[?25h", end="")
 
-if __name__ == "__main__":
+def main() -> None:
     try:
-        asyncio.run(main())
+        asyncio.run(async_main())
     except KeyboardInterrupt:
         pass
     finally:
         # Leave the buffer, make cursor visible again
         print("\033[?1049l\033[?25h", end="")
+
+if __name__ == "__main__":
+    main()

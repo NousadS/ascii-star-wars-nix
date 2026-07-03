@@ -19,19 +19,23 @@ There is two ways to use this repository either as a **Nix flake** or as pure **
 
 ---
 
-The first script is [`main.py` or the player](main.py). It will play the Star Wars movie in ASCII art in your terminal. Just make sure you have the `starwars.txt` file in the same directory where you run the command. To run the script you can either use nix flake or just python:
+The first script is [`player.py` or the player](player.py). It will play the Star Wars movie in ASCII art in your terminal. Just make sure you have the `starwars.txt` file in the same directory where you run the command. To run the script you can either use nix flake or just python:
 
 ```bash
 # Nix
+
 nix run .#
 
 # Python
-python main.py
+
+python player.py
+# or
+./player.py
 ```
 
 ---
 
-The second script is [`update.py` or the updater](update.py). The updater downloads the latest ASCII Star Wars animation from **asciimation.co.nz** to `starwars.txt`, preserving the last file as an archive. To run the script you have both previous options:
+The second script is [`updater.py` or the updater](updater.py). The updater downloads the latest ASCII Star Wars animation from **asciimation.co.nz** to `starwars.txt`, preserving the last file as an archive. To run the script you have both previous options:
 
 > [!WARNING]
 > When running with Python directly, make sure the requests package is installed. 
@@ -39,10 +43,14 @@ The second script is [`update.py` or the updater](update.py). The updater downlo
 
 ```bash
 # Nix
+
 nix run .#update
 
 # Python
-python update.py
+
+python updater.py
+# or
+./updater.py
 ```
 
 ## Data source

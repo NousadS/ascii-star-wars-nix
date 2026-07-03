@@ -1,5 +1,5 @@
 {
-  description = "Star Wars ASCII animation";
+  description = "Star Wars ASCII film animation player and updater";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -31,8 +31,8 @@
       in
       {
         packages = {
-          default = mkScript "starwars" "main.py";
-          update = mkScript "starwars-update" "update.py";
+          default = mkScript "starwars" "player.py";
+          update = mkScript "starwars-update" "updater.py";
         };
 
         apps = {

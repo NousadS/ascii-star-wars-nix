@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
+
 """
-Updating ASCII Art (Star Wars) from https://www.asciimation.co.nz/
+Updater for ASCII Art (Star Wars) from https://www.asciimation.co.nz/
 """
 
+import os
 import sys
 import re
 import requests
