@@ -2,6 +2,7 @@
 Updating ASCII Art (Star Wars) from https://www.asciimation.co.nz/
 """
 
+import sys
 import re
 import requests
 from pathlib import Path
@@ -49,6 +50,10 @@ if STARWARS_FILE.exists():
     print("[*] Existing file found")
 
     old_film_text: str = STARWARS_FILE.read_text(encoding="utf-8")
+
+    if old_film_text == film_text:
+        print("[+] Local file is already up to date")
+        sys.exit(0)
 
     print("[*] Extracting archive year from existing file")
 
