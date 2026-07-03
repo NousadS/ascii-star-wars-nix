@@ -10,7 +10,7 @@ import shutil
 from datetime import datetime
 from typing import Optional, Pattern, Match
 
-STARWARS_FILE: Path = Path().cwd() / "starwars.txt"
+STARWARS_FILE: Path = Path(os.environ.get("STARWARS_FILE", Path.cwd() / "starwars.txt"))
 URL: str = "https://www.asciimation.co.nz/"
 FILM_REGEX: Pattern[str] = re.compile(r"var film = '(.*)'\.split")
 

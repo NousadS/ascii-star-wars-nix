@@ -6,7 +6,7 @@ import asyncio
 from pathlib import Path
 import sys
 
-STARWARS_FILE: Path = Path().cwd() / "starwars.txt"
+STARWARS_FILE: Path = Path(os.environ.get("STARWARS_FILE", Path.cwd() / "starwars.txt"))
 
 
 async def main() -> None:
